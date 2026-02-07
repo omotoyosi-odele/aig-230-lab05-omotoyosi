@@ -1,12 +1,15 @@
-# AIG 230 – Lab 04  
-## Word Embeddings: Learning Meaning from Context
+
+# AIG 230 – Lab 05  
+## Sequence Models with PyTorch: Learning from Ordered Text
 
 ### Overview
 
-This lab introduces **learned text representations**, commonly known as **word embeddings**.  
-Unlike previous labs that relied on counting words or fixed n-gram contexts, this lab focuses on representations that are **learned from data**, **dense**, and **semantic**.
+This lab introduces **sequence modeling**, a core concept in modern Natural Language Processing.
+Unlike previous labs that treated text as unordered collections of words or standalone embeddings,
+this lab focuses on models that **explicitly account for word order and temporal structure**.
 
-You will explore how models can learn meaning from word co-occurrence patterns and how these representations are used in practical NLP workflows.
+You will work with **Recurrent Neural Networks (RNNs)** implemented in **PyTorch** to understand
+how models process text one token at a time and learn representations that depend on context over time.
 
 ---
 
@@ -14,29 +17,28 @@ You will explore how models can learn meaning from word co-occurrence patterns a
 
 By completing this lab, you will be able to:
 
-- Explain **distributional semantics** and why meaning can be learned from context
-- Train word embeddings using **Word2Vec** and **FastText**
-- Interpret **semantic similarity** using cosine distance
-- Perform **vector algebra (analogies)** and explain why it works
-- Visualize embedding spaces and reason about their structure
-- Compare embeddings to n-gram and count-based representations
-- Describe realistic **industry use cases** for word embeddings
+- Explain why **word order** matters in NLP tasks
+- Describe how **sequence models** differ from bag-of-words and embedding-only approaches
+- Understand the structure and behavior of **Recurrent Neural Networks (RNNs)**
+- Work with **sequence tensors** in PyTorch
+- Trace how information flows across time steps in an RNN
+- Interpret model outputs and loss values during training
+- Connect sequence modeling to downstream NLP tasks
 
 ---
 
 ### Topics Covered
 
-This lab directly builds on the lecture material for Week 4 and covers:
+This lab builds on Week 4 and introduces foundational concepts for neural NLP models:
 
-- Learned representations vs engineered features  
-- Distributional semantics (“a word is known by the company it keeps”)  
-- Word2Vec (Skip-gram architecture, high-level intuition)  
-- Semantic similarity and nearest neighbors  
-- Vector arithmetic and analogies  
-- Visualization of embedding spaces (PCA)  
-- FastText and subword information  
-- Conceptual comparison with GloVe  
-- Practical limitations and evaluation considerations  
+- Limitations of bag-of-words and static embeddings  
+- Sequences and temporal dependencies in language  
+- Recurrent Neural Networks (high-level intuition)  
+- Hidden states and information flow over time  
+- Input, hidden, and output representations  
+- Tensor shapes for sequences and batches  
+- Training loops for sequence models in PyTorch  
+- Conceptual limitations of basic RNNs  
 
 ---
 
@@ -44,60 +46,75 @@ This lab directly builds on the lecture material for Week 4 and covers:
 
 You will work with:
 
-- **Gensim** for training Word2Vec and FastText models  
-- **scikit-learn** for dataset loading and dimensionality reduction  
-- **NLTK** for basic tokenization and preprocessing  
-- **matplotlib** for visualization  
+- **PyTorch** for building and training sequence models  
+- **NLTK** for tokenization and basic preprocessing  
+- **NumPy / Pandas** for data handling  
+- **matplotlib** for visualizing training behavior  
+- **Jupyter Notebook** for interactive experimentation  
 
 ---
 
 ### Dataset
 
-The lab uses the **20 Newsgroups** dataset, a real-world text corpus containing posts from multiple topics such as technology, politics, science, and religion.
+The lab uses a **small text corpus** designed to emphasize **sequence behavior and model mechanics**
+rather than large-scale performance.
 
-This dataset is commonly used in NLP research and is representative of industry text sources such as forums, support tickets, and knowledge bases.
+The goal is to understand:
+
+- How sequences are constructed
+- How tokens are processed step by step
+- How context accumulates across time
+
+This mirrors how larger neural models process real-world text.
 
 ---
 
 ### Files in This Lab
 
-- `AIG230_Week4_Lab_Word_Embeddings.ipynb`  
-  The main lab notebook.  
+- `AIG230_Week5_Lab_Sequence_Models.ipynb`  
+  The main lab notebook.
+
   Includes:
-  - Concept explanations
-  - Fully commented code
-  - Visualization
-  - Multiple checkpoints for reflection and understanding
+  - Conceptual explanations
+  - Fully commented PyTorch code
+  - Shape and tensor walkthroughs
+  - Training loop breakdowns
+  - Checkpoint questions for understanding
+
+- `SETUP.md`  
+  Environment and installation instructions specific to Lab 05.
 
 ---
 
 ### Instructions
 
-1. Use this template repository.
-2. Create a repository named `aig230-lab04-yourname`.
-3. Complete the notebook:
+1. Use the provided template repository.
+2. Create a repository named `aig230-lab05-yourname`.
+3. Follow **SETUP.md** exactly before opening the notebook.
+4. Complete the notebook:
    - Run all code cells
    - Answer **all checkpoint questions** in markdown cells
-4. Commit and push your completed notebook to your repository.
-5. Submit the repository link on Blackboard.
+5. Commit and push your completed notebook to GitHub.
+6. Submit the repository link on Blackboard.
 
 ---
 
 ### Expectations
 
-- Your notebook should run from top to bottom without errors.
-- Code should not be deleted or heavily rewritten unless instructed.
-- Written answers should be clear, concise, and in your own words.
-- Focus on **understanding and interpretation**, not just producing output.
+- The notebook must run from top to bottom without errors.
+- Do not delete or restructure code unless explicitly instructed.
+- Written answers must be clear, concise, and in your own words.
+- Focus on **understanding sequence behavior**, not model performance.
 
 ---
 
 ### Key Takeaway
 
-This lab marks a conceptual shift in the course:
+This lab marks the transition from **static representations** to **dynamic models of language**.
 
-> We move from **counting words** to **learning meaning**.
+Sequence models are the first step toward more powerful architectures such as
+**attention mechanisms, transformers, and large language models**, which you will study next.
 
-Word embeddings are a foundational idea that enables modern neural NLP models and prepares you for upcoming topics such as text classification, transfer learning, and contextual embeddings.
+Understanding how information flows through time is essential for everything that follows.
 
 ---
