@@ -1,6 +1,6 @@
 
 # AIG 230 – Lab 05  
-## Sequence Models with PyTorch: Learning from Ordered Text
+## End-to-End NLP Pipeline: From Raw Text to Word Embeddings
 
 ### Overview
 An NLP pipeline that shows how to process and analyze raw text. Using Jane Austen's Emma from the NLTK library as the dataset, the project demonstrates how to take messy, unstructured text and turn it into formats that machine learning models can understand. It covers the essential steps of text analysis, from basic cleaning to training models that can generate text and find relationships between words.
